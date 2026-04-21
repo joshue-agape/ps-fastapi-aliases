@@ -196,7 +196,7 @@ CORS_ORIGINS='["*"]'
 '@
 
 
-function New-FastApi {
+function New-Fastapi {
     param(
         [string]$PROJECT_NAME
     )
@@ -256,4 +256,28 @@ function New-FastApi {
     Write-Host "        uvicorn app.main:app --reload"
     Write-Host "🔹 Run tests:"
     Write-Host "        pytest <test_file>"
+}
+
+
+function New-Fastapi-project {
+    param(
+        [string]$PROJECT_NAME
+    )
+    New-Fastapi $PROJECT_NAME
+}
+
+
+function Create-Fastapi {
+    param(
+        [string]$PROJECT_NAME
+    )
+    New-Fastapi $PROJECT_NAME
+}
+
+
+function Create-Fastapi-project {
+    param(
+        [string]$PROJECT_NAME
+    )
+    New-Fastapi $PROJECT_NAME
 }

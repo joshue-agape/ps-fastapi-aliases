@@ -728,3 +728,7 @@ function Fastapi-Database {
         Write-Host "        alembic upgrade head"
     }
 }
+
+function Setup-Fastapi-database {
+    Fastapi-Database
+}

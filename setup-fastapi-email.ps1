@@ -165,3 +165,7 @@ function Fastapi-Email {
 
     Write-Host "Email setup completed successfully!"
 }
+
+function Setup-Fastapi-Mail {
+    Fastapi-Email
+}
