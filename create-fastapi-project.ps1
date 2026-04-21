@@ -43,6 +43,44 @@ api_router.include_router(health.router, prefix="/health", tags=["Health"])
 '@
 
 
+$fastapi_response_service_content = @'
+from typing import Any
+from fastapi.responses import JSONResponse
+
+
+class ServiceResponse:
+    @staticmethod
+    def success(
+        data: Any = None,
+        message: str = "Success",
+        status_code: int = 200
+    ):
+        return JSONResponse(
+            content={
+                "success": True,
+                "status_code": status_code,
+                "message": message,
+                "data": data
+            }
+        )
+
+    @staticmethod
+    def error(
+        message: str = "Error",
+        status_code: int = 400,
+        data: Any = None
+    ):
+        return JSONResponse(
+            content={
+                "success": False,
+                "status_code": status_code,
+                "message": message,
+                "data": data
+            }
+        )
+'@
+
+
 $fastapi_health_content = @'
 from fastapi import APIRouter
 
@@ -186,6 +224,7 @@ function New-FastApi {
     $dirs = @(
         "app/api/v1/endpoints",
         "app/core",
+        "app/services",
         "tests"
     )
     foreach ($d in $dirs) { if (-not (Test-Path $d)) { New-Item -ItemType Directory -Path $d -Force | Out-Null } }
@@ -193,6 +232,7 @@ function New-FastApi {
     $fastapi_config_content = fastapi_config $PROJECT_NAME
     Set-Content "app/core/config.py" -Value $fastapi_config_content -Encoding UTF8
     Set-Content "app/api/v1/router.py" -Value $fastapi_router_content -Encoding UTF8
+    Set-Content "app/services/response_service.py" -Value $fastapi_response_service_content -Encoding UTF8
     Set-Content "app/api/v1/endpoints/health.py" -Value $fastapi_health_content -Encoding UTF8
     Set-Content "app/main.py" -Value $fastapi_main_content -Encoding UTF8
     Set-Content "tests/test_health.py" -Value $fastapi_test_content -Encoding UTF8
