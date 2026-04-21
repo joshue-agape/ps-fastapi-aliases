@@ -259,7 +259,7 @@ function New-Fastapi {
 }
 
 
-function New-Fastapi-project {
+function New-Fastapi-Project {
     param(
         [string]$PROJECT_NAME
     )
@@ -275,7 +275,7 @@ function Create-Fastapi {
 }
 
 
-function Create-Fastapi-project {
+function Create-Fastapi-Project {
     param(
         [string]$PROJECT_NAME
     )

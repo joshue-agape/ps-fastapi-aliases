@@ -729,6 +729,6 @@ function Fastapi-Database {
     }
 }
 
-function Setup-Fastapi-database {
+function Setup-Fastapi-Database {
     Fastapi-Database
 }

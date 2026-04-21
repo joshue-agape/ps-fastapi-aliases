@@ -97,11 +97,11 @@ Create-Fastapi project_name
 ```
 
 ```bash
-New-Fastapi-project project_name
+New-Fastapi-Project project_name
 ```
 
 ```bash
-Create-Fastapi-project project_name
+Create-Fastapi-Project project_name
 ```
 
 🗄️ To Setup Database  
@@ -112,7 +112,7 @@ Fastapi-Database
 ```
 
 ```bash
-Setup-Fastapi-database
+Setup-Fastapi-Database
 ```
 
 📧 To Setup Mailer  
