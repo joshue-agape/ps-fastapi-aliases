@@ -83,31 +83,46 @@ Reload your profile
 Your aliases are now active 🎉  
 You can start using them immediately to speed up your workflow.  
 
-### CLI Commands
+### ⚙️ CLI Commands
 
-To Create a New Project  
+🚀 To Create a New Project  
 Quickly scaffold a new FastAPI project using any of the following commands:  
 
 ```bash
 New-Fastapi project_name
+```
+
+```bash
 Create-Fastapi project_name
+```
+
+```bash
 New-Fastapi-project project_name
+```
+
+```bash
 Create-Fastapi-project project_name
 ```
 
-To Setup Database  
+🗄️ To Setup Database  
 Initialize and configure your FastAPI database environment:  
 
 ```bash
 Fastapi-Database
+```
+
+```bash
 Setup-Fastapi-database
 ```
 
-To Setup Mailer  
+📧 To Setup Mailer  
 Configure the email service for your FastAPI application:  
 
 ```bash
 Fastapi-Email
+```
+
+```bash
 Setup-Fastapi-Mail
 ```
 
